@@ -1,0 +1,157 @@
+
+*
+{margin: 0px;
+padding: 0px;}
+
+html
+{font-size: 62,5%;}
+
+body
+{background-image: url(../img/fundo\ body.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100%;
+background-attachment: fixed;}
+
+
+
+
+
+
+
+
+.container
+{position: absolute;
+position: relative;
+width: 60%;
+height: 600px;
+top: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+margin: auto;
+margin-top: 100px;
+background-color: rgb(62, 179, 242);
+overflow: hidden;}
+
+
+.container h1
+{font-size: 4rem;
+font-family: 'Caprasimo', cursive;
+text-align: center;
+margin-top: 180px;
+display: none;}
+
+.pLose
+{font-size: 1.4rem;
+font-family: 'Caprasimo', cursive;
+text-align: center;
+display: none;}
+
+.score
+{position: absolute;
+width: 200px;
+height: 30px;
+top: 20px;
+right: 0px;
+font-size: 1.2rem;
+font-family: 'Caprasimo', cursive;}
+
+.scoreFinal
+{font-size: 1.4rem;
+font-family: 'Caprasimo', cursive;
+text-align: center;
+margin-top: 50px;
+display: none;}
+
+
+
+
+/*Objetos animados*/
+
+.nuvem
+{position: absolute;
+width: 300px;
+top: 50px;
+animation: tunelAnimacao 10000ms infinite linear;}
+
+.chao
+{position: absolute;
+width: 200%;
+height: 80px;
+bottom: 0px;
+animation: chaoAnimacao 2100ms infinite linear;}
+
+@keyframes chaoAnimacao {
+    
+    from{
+        right: -100%;
+    }
+
+    to{
+        right: 0px;
+    }
+
+}
+
+.tunel
+{position: absolute;
+width: 80px;
+bottom: 80px;
+animation: tunelAnimacao 2500ms infinite linear;}
+
+@keyframes tunelAnimacao {
+    
+    from{
+        right: -150px;
+    }
+
+    to{
+        right: 100%;
+    }
+
+}
+
+
+.mario
+{position: absolute;
+width: 180px;
+height: auto;
+bottom: 80px;}
+
+.marioPulo
+{animation: pulo 700ms ease-in-out;}
+
+@keyframes pulo {
+
+    0%{
+        bottom: 80px;
+    }
+
+    30%{
+        bottom: 240px;
+    }
+
+    40%{
+        bottom: 240px;
+    }
+
+    50%{
+        bottom: 240px;
+    }
+
+    60%{
+        bottom: 240px;
+    }
+
+    70%{
+        bottom: 240px;
+    }
+
+    100%{
+        bottom: 80px;
+    }
+
+}
+
+
