@@ -58,7 +58,7 @@ function obstaculo () {
             lose.style.display = 'block'; 
             pLose.style.display = 'block'; 
             scoreFinal.style.display = 'block'; 
-            scoreFinal.innerHTML = `Score final: ${scoreInicial}`
+            scoreFinal.innerHTML = `Score: ${scoreInicial}`
             clearInterval(time); 
 
 
