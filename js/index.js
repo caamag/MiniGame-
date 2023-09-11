@@ -30,9 +30,7 @@ function marioJunp () {
         mario.classList.remove('marioPulo'); 
     }, 700); 
 
-}
-
-
+};
 
 
 
@@ -42,10 +40,12 @@ function obstaculo () {
 
     setInterval(() => {
     
-        const distanciaTunel = tunel.offsetLeft; 
+        const distanciaTunel = tunel.offsetLeft;
         const alturaMario = window.getComputedStyle(mario).bottom.replace('px', ''); 
+        const larguraTelaJogador = window.innerWidth; 
 
-        if (distanciaTunel <= 155 && alturaMario <= 80) {
+
+        if (larguraTelaJogador >= 1200 && distanciaTunel <= 140 && alturaMario <= 80) {
 
             tunel.style.display = 'none'; 
             chao.style.animation = 'none'; 
@@ -61,11 +61,25 @@ function obstaculo () {
             scoreFinal.innerHTML = `Score: ${scoreInicial}`
             clearInterval(time); 
 
+        } else if (larguraTelaJogador >= 800 && larguraTelaJogador < 1350 && distanciaTunel <= 100 && alturaMario <= 80) {
 
+            tunel.style.display = 'none'; 
+            chao.style.animation = 'none'; 
+            nuvem.style.display = 'none'; 
+            mario.style.animation = 'none'; 
 
-        } else {
-            return; 
+            mario.src = '../img/game-over.png'; 
+            mario.style.width = '100px'; 
+
+            lose.style.display = 'block'; 
+            pLose.style.display = 'block'; 
+            scoreFinal.style.display = 'block'; 
+            scoreFinal.innerHTML = `Score: ${scoreInicial}`
+            clearInterval(time); 
+
         }
+
+
 
     }, 10)
 
