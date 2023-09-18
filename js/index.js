@@ -14,13 +14,31 @@ const scoreFinal = document.querySelector('.scoreFinal');
 
 
 
-//acionando animação do pulo:
+//acionando animação do pulo por clique:
 
-document.addEventListener('click', () => {
+document.addEventListener('click', (e) => {
 
     marioJunp(); 
 
-})
+}); 
+
+//acionando animação do pulo por apertar tecla "espaço":
+
+document.addEventListener('keydown', (e) => {
+
+    const codigoTecla = e.keyCode; 
+
+    if(codigoTecla === 32){
+        marioJunp(); 
+        return; 
+    } else{
+        return; 
+    }
+
+}); 
+
+
+
 
 function marioJunp () {
 
@@ -45,7 +63,9 @@ function obstaculo () {
         const larguraTelaJogador = window.innerWidth; 
 
 
-        if (larguraTelaJogador >= 1200 && distanciaTunel <= 140 && alturaMario <= 80) {
+        if (larguraTelaJogador >= 1200 
+            && distanciaTunel <= 140 
+            && alturaMario <= 80) {
 
             tunel.style.display = 'none'; 
             chao.style.animation = 'none'; 
@@ -61,7 +81,10 @@ function obstaculo () {
             scoreFinal.innerHTML = `Score: ${scoreInicial}`
             clearInterval(time); 
 
-        } else if (larguraTelaJogador >= 800 && larguraTelaJogador < 1350 && distanciaTunel <= 100 && alturaMario <= 80) {
+        } else if (larguraTelaJogador >= 800 
+            && larguraTelaJogador < 1350 
+            && distanciaTunel <= 110
+            && alturaMario <= 80) {
 
             tunel.style.display = 'none'; 
             chao.style.animation = 'none'; 
