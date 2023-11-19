@@ -14,11 +14,11 @@ const scoreFinal = document.querySelector('.scoreFinal');
 
 
 
-//acionando animação do pulo por clique:
 
 document.addEventListener('click', (e) => {
 
     marioJunp(); 
+    playMarioJumpSound(1); 
 
 }); 
 
@@ -30,9 +30,7 @@ document.addEventListener('keydown', (e) => {
 
     if(codigoTecla === 32){
         marioJunp(); 
-        return; 
-    } else{
-        return; 
+        playMarioJumpSound(1); 
     }
 
 }); 
@@ -78,7 +76,8 @@ function obstaculo () {
             lose.style.display = 'block'; 
             pLose.style.display = 'block'; 
             scoreFinal.style.display = 'block'; 
-            scoreFinal.innerHTML = `Score: ${scoreInicial}`
+            scoreFinal.innerHTML = `Score: ${scoreInicial}`; 
+            playMarioJumpSound(0); 
             clearInterval(time); 
 
         } else if (larguraTelaJogador >= 800 
@@ -98,6 +97,7 @@ function obstaculo () {
             pLose.style.display = 'block'; 
             scoreFinal.style.display = 'block'; 
             scoreFinal.innerHTML = `Score: ${scoreInicial}`
+            playMarioJumpSound(0); 
             clearInterval(time); 
 
         }
@@ -129,3 +129,14 @@ score.innerHTML = `Score: ${scoreInicial}`;
 }; 
 
 contador(); 
+
+//mario jump sound effect
+function playMarioJumpSound (x) {
+    const sound = document.querySelector('#mario-jump-sound'); 
+
+    if (x === 1) {
+        sound.play(); 
+    }else{
+        sound.pause(); 
+    }
+}
